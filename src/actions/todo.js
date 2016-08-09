@@ -1,32 +1,24 @@
-export const ADD_TODO = 'ADD_TODO';
-export const COMPLETE_TODO = 'COMPLETE_TODO';
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
-
-// 其它常量
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
-}
+let nextTodoId = 0;
 
 // action 创建函数
-export function addTodo(text){
+export const addTodo = (text) => {
   return {
-    type: ADD_TODO,
+    type: 'ADD_TODO',
+    id: nextTodoId++,
     text
   }
 }
 
-export function completed(text) {
+export const setVisibilityFilter = (filter) =>{
   return {
-    type: COMPLETE_TODO,
-    text
-  }
-}
-
-export function setVisibilityFilter(filter){
-  return {
-    type: SET_VISIBILITY_FILTER,
+    type: 'SET_VISIBILITY_FILTER',
     filter
+  }
+}
+
+export const toggleTodo = (id) => {
+  return {
+    type: 'TOGGLE_TODO',
+    id
   }
 }
