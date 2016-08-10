@@ -1,4 +1,6 @@
 {
+  "name": "react_ant",
+  "version": "v0.0.1",
   "private": true,
   "entry": {},
   "dependencies": {

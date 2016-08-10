@@ -36,9 +36,10 @@ class Tabler extends Component{
   }
 
   render(){
+    return (
     const {columns, dataSource} = this.state;
     return <Table dataSource={dataSource} columns={columns} />
-
+)
   };
 }
 
